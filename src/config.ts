@@ -2,7 +2,7 @@
 //  THÔNG TIN CHUNG CỦA WEBSITE — sửa ở đây, toàn bộ web tự đổi theo
 // ================================================================
 
-export const SITE_URL = "https://new-green-villa-hoi-an.vercel.app"; // đổi thành tên miền thật khi mua
+export const SITE_URL = "https://www.newgreenvillahoian.com";
 
 export const PHONE = "0949.249.649";        // số hiển thị
 export const PHONE_TEL = "0949249649";      // số dùng cho nút gọi (viết liền)
