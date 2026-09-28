@@ -1,0 +1,75 @@
+---
+import Layout from "../layouts/Layout.astro";
+import { COMPANY, COMPANY_TAX, COMPANY_ADDRESS, PHONE } from "../config";
+---
+<Layout
+  path="/chinh-sach-bao-mat"
+  title="Chính sách bảo mật - New Green Villa Hội An"
+  description="Chính sách bảo mật thông tin cá nhân khi truy cập website New Green Villa Hội An."
+>
+  <main class="policy-page">
+    <h1>Chính sách bảo mật</h1>
+    <p>Chào mừng quý khách đến với website cung cấp thông tin dự án New Green Villa Hội An. Chúng tôi cam kết bảo vệ quyền riêng tư của người dùng và cung cấp thông tin một cách minh bạch, khách quan nhất.</p>
+
+    <h2>1. Thu thập thông tin cá nhân</h2>
+    <p>Website của chúng tôi có thể thu thập thông tin cá nhân khi quý khách tự nguyện thực hiện các hành động sau:</p>
+    <ul>
+      <li>Đăng ký nhận bảng giá, chính sách bán hàng qua biểu mẫu (Form).</li>
+      <li>Đăng ký nhận tư vấn chuyên sâu về thị trường bất động sản Hội An – Đà Nẵng.</li>
+      <li>Gửi yêu cầu liên hệ trực tiếp qua hệ thống hỗ trợ trực tuyến.</li>
+    </ul>
+    <p>Các thông tin thu thập bao gồm: Họ và tên, Số điện thoại, Email và nhu cầu cụ thể của quý khách.</p>
+
+    <h2>2. Mục đích sử dụng thông tin</h2>
+    <p>Mọi dữ liệu cá nhân được thu thập trên website chỉ được sử dụng cho các mục đích:</p>
+    <ul>
+      <li>Cung cấp các tài liệu tham khảo, bản đồ quy hoạch và thông tin mới nhất về dự án New Green Villa Hội An</li>
+      <li>Hỗ trợ kết nối người dùng với các chuyên viên tư vấn phù hợp thuộc hệ thống phân phối.</li>
+      <li>Gửi thông tin cập nhật về thị trường bất động sản khu vực Hội An, Đà Nẵng và các vùng lân cận.</li>
+      <li>Nghiên cứu thị trường để cải thiện trải nghiệm người dùng trên website.</li>
+    </ul>
+
+    <h2>3. Bảo mật dữ liệu và Cookies</h2>
+    <p><strong>Bảo mật:</strong> Chúng tôi cam kết không bán, chia sẻ hoặc tiết lộ thông tin cá nhân của quý khách cho bất kỳ bên thứ ba nào khi chưa có sự đồng ý, trừ trường hợp yêu cầu bởi cơ quan pháp luật.</p>
+    <p><strong>Cookies:</strong> Website sử dụng công nghệ Cookie để ghi nhớ tùy chọn của người dùng và phân tích lưu lượng truy cập nhằm tối ưu hóa giao diện. Quý khách có thể tùy chọn tắt Cookie trong cài đặt trình duyệt.</p>
+
+    <h2>4. Tuyên bố Miễn trừ Trách nhiệm (Disclaimer)</h2>
+    <ul>
+      <li><strong>Tính độc lập:</strong> Website này là kênh cung cấp thông tin tham khảo độc lập về dự án New Green Villa Hội An. Chúng tôi không phải là website chính thức của chủ đầu tư dự án.</li>
+      <li><strong>Nguồn tin:</strong> Toàn bộ nội dung, hình ảnh, thông số kỹ thuật và phối cảnh được tổng hợp từ nhiều nguồn dữ liệu thị trường uy tín tại thời điểm đăng tải. Các thông tin này có giá trị tham khảo và có thể thay đổi theo quyết định của chủ đầu tư mà không báo trước.</li>
+      <li><strong>Hoạt động kinh doanh:</strong> Website thực hiện vai trò tư vấn và cung cấp dữ liệu phân tích, không trực tiếp thực hiện giao dịch mua bán bất động sản thay thế cho các sàn giao dịch chính thức. Người dùng nên đối chiếu thông tin với các văn bản pháp lý chính thống trước khi đưa ra quyết định đầu tư.</li>
+    </ul>
+
+    <h2>5. Sự đồng ý của người dùng</h2>
+    <p>Bằng việc truy cập website và sử dụng các tính năng liên hệ, quý khách được hiểu là đã đọc, hiểu rõ và đồng ý với toàn bộ nội dung trong Chính sách này.</p>
+
+    <h2>6. Thông tin đơn vị vận hành</h2>
+    <p>Mọi thắc mắc hoặc yêu cầu chỉnh sửa/xóa dữ liệu cá nhân, vui lòng liên hệ:</p>
+    <p><strong>{COMPANY}</strong></p>
+    <ul>
+      <li>Mã số thuế: {COMPANY_TAX}</li>
+      <li>Địa chỉ trụ sở: {COMPANY_ADDRESS}</li>
+      <li>Hotline hỗ trợ: {PHONE}</li>
+    </ul>
+  </main>
+</Layout>
+
+<style>
+  .policy-page {
+    max-width: 800px;
+    margin: 0 auto;
+    padding: 100px 24px 60px;
+    line-height: 1.7;
+  }
+  .policy-page h1 {
+    margin-bottom: 24px;
+  }
+  .policy-page h2 {
+    margin-top: 32px;
+    margin-bottom: 12px;
+  }
+  .policy-page ul {
+    padding-left: 20px;
+    margin-bottom: 16px;
+  }
+</style>

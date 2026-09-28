@@ -1,0 +1,231 @@
+---
+import { FORM_ACTION, ENTRY_NAME, ENTRY_PHONE } from "../config";
+---
+<section id="bang-gia" class="pricelist">
+  <div class="container">
+    <div class="section-heading">
+      <h2>BẢNG GIÁ ĐẤT NỀN NEW GREEN VILLA HỘI AN</h2>
+      <span class="heading-line"></span>
+    </div>
+        <div class="pricelist-intro-text">
+      <p>
+        <strong>New Green Villa Hội An</strong> mang đến giỏ hàng đất nền đa dạng, đáp ứng cả nhu cầu an cư, xây dựng không gian sống riêng
+        và đầu tư lâu dài. Sản phẩm được quy hoạch với nhiều lựa chọn diện tích, nổi bật gồm lô ống từ 126–150 m² và lô biệt thự
+        diện tích khoảng 300–400 m².
+      </p>
+      <p>
+        Mức giá chỉ từ 11tr/m2 được phân bổ theo từng vị trí, diện tích, hướng và đặc điểm của từng lô. Khách hàng có thể dễ dàng lựa chọn sản phẩm
+        phù hợp với nhu cầu và khả năng tài chính, từ các lô đất diện tích vừa phải đến những lô biệt thự có không gian rộng rãi.
+      </p>
+      <p>
+        Bảng giá và giỏ hàng được cập nhật theo từng thời điểm. Vui lòng liên hệ để kiểm tra lô còn hàng, vị trí trên mặt bằng
+        và mức giá mới nhất.
+      </p>
+    </div>
+
+    <div class="pricelist-image">
+      <img src="/images/bang-gia-new-green-villa-hoi-an.webp" alt="Bảng giá đất nền New Green Villa Hội An tháng 9/2026 – còn 33 lô" loading="lazy" />
+    </div>
+
+    <div class="pricelist-box">
+      <p class="pricelist-highlight">
+        Sở hữu đất nền <strong>có sổ đỏ</strong> cạnh phố cổ Hội An chỉ từ <strong>1,43 tỷ/lô</strong>.
+        Chỉ còn 33 lô, số lượng có hạn.
+      </p>
+      <p class="pricelist-sub">
+        Đăng ký ngay để nhận bảng giá chi tiết 33 lô còn hàng qua Zalo trong ít phút.
+      </p>
+
+      <form
+        class="pricelist-form"
+        id="pricelist-form"
+        action={FORM_ACTION}
+        method="POST"
+        target="hidden-google-form"
+      >
+        <input type="text" name={ENTRY_NAME} placeholder="Họ và tên..." required />
+        <input type="tel" name={ENTRY_PHONE} placeholder="Số điện thoại/Zalo..." required />
+        <button type="submit">Nhận bảng giá ngay</button>
+      </form>
+
+      <div class="success-screen" id="pricelist-success">
+        <svg class="success-check" viewBox="0 0 52 52">
+          <circle cx="26" cy="26" r="25" fill="none" />
+          <path fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+        </svg>
+        <p class="success-title">Đăng ký thành công!</p>
+        <p class="success-sub">Chúng tôi sẽ liên hệ bạn sớm nhất.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.pricelist { background: var(--color-mist); padding-top: 0px !important; padding-bottom: 32px; }
+  .section-heading {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .section-heading h2 {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    letter-spacing: 0.04em;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  .heading-line {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--color-clay);
+    margin: 14px auto 0;
+  }
+  .pricelist-intro-text p {
+    color: #3d4d49;
+    line-height: 1.75;
+    margin-bottom: 10px;
+    text-align: justify;
+  }
+  .pricelist-intro-text ul {
+    list-style: none;
+    padding: 0;
+    margin: 6px 0 12px;
+  }
+  .pricelist-intro-text li {
+    color: #3d4d49;
+    line-height: 1.6;
+    padding-left: 22px;
+    margin-bottom: 6px;
+    position: relative;
+  }
+  .pricelist-intro-text li::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    color: var(--color-brass);
+    font-size: 0.85rem;
+  }
+  .pricelist-intro-text strong { color: var(--color-ink); }
+  .pricelist-image {
+    border-radius: 8px;
+    overflow: hidden;
+    margin: 8px 0 24px;
+  }
+  .pricelist-image img {
+    width: 100%;
+    display: block;
+  }
+  .pricelist-box {
+    background: var(--color-ink);
+    border-radius: 8px;
+    padding: 48px;
+    text-align: center;
+    max-width: 720px;
+    margin: 0 auto;
+  }
+  .pricelist-highlight {
+    color: var(--color-mist);
+    font-size: 1.15rem;
+    line-height: 1.6;
+    margin-bottom: 16px;
+  }
+  .pricelist-highlight strong { color: var(--color-brass); }
+  .pricelist-sub {
+    color: var(--color-sand);
+    font-size: 0.95rem;
+    line-height: 1.6;
+    margin-bottom: 28px;
+  }
+
+  .pricelist-form {
+    display: flex;
+    flex-direction: column;
+    gap: 14px;
+    max-width: 420px;
+    margin: 0 auto;
+  }
+  .pricelist-form input {
+    padding: 12px 14px;
+    border-radius: 4px;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+  }
+  .pricelist-form button {
+    background: #c0392b;
+    color: white;
+    border: none;
+    padding: 13px 22px;
+    border-radius: 4px;
+    font-weight: 700;
+    cursor: pointer;
+    font-family: var(--font-body);
+    transition: background 0.2s ease;
+    margin-top: 4px;
+  }
+  .pricelist-form button:hover { background: #a5301f; }
+
+  @media (max-width: 860px) {
+    .pricelist { padding-top: 8px; padding-bottom: 20px; }
+    .pricelist-box { padding: 28px 20px; }
+  }
+
+  .success-screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 12px 0 4px;
+  }
+  .success-screen.is-visible { display: flex; }
+
+  .success-check {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 14px;
+  }
+  .success-check circle {
+    stroke: var(--color-brass);
+    stroke-width: 2;
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    animation: draw-circle 0.5s ease forwards;
+  }
+  .success-check path {
+    stroke: var(--color-brass);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: draw-check 0.35s ease forwards 0.45s;
+  }
+  @keyframes draw-circle { to { stroke-dashoffset: 0; } }
+  @keyframes draw-check { to { stroke-dashoffset: 0; } }
+
+  .success-title {
+    color: var(--color-mist);
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+  .success-sub {
+    color: var(--color-sand);
+    font-size: 0.9rem;
+  }
+</style>
+<script>
+  const form = document.getElementById("pricelist-form");
+  const success = document.getElementById("pricelist-success");
+
+  form?.addEventListener("submit", () => {
+    if (typeof gtag_report_conversion === "function") {
+      gtag_report_conversion();
+    }
+    setTimeout(() => {
+      form.style.display = "none";
+      success?.classList.add("is-visible");
+    }, 700);
+  });
+</script>

@@ -1,0 +1,88 @@
+---
+import { PHONE_TEL, ZALO_URL } from "../config";
+---
+<div class="floating-contact">
+  <a href={ZALO_URL} target="_blank" rel="noopener" class="fab fab-zalo" aria-label="Chat Zalo">
+    <img src="/images/zalo-icon.png" alt="Zalo" />
+    <span class="ring"></span>
+  </a>
+  <a href={`tel:${PHONE_TEL}`} class="fab fab-phone" aria-label="Gọi điện">
+    <img src="/images/call-icon.png" alt="Gọi điện" />
+    <span class="ring"></span>
+  </a>
+</div>
+
+<a href="#bang-gia" class="floating-cta">Nhận bảng giá</a>
+
+<style>
+  .floating-contact {
+    position: fixed;
+    left: 20px;
+    bottom: 24px;
+    z-index: 60;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  .fab {
+    position: relative;
+    width: 54px;
+    height: 54px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 1.1rem;
+    color: white;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    animation: breathe 1.4s ease-in-out infinite;
+  }
+  .fab img {
+    width: 60%;
+    height: 60%;
+    object-fit: contain;
+  }
+  .fab-zalo { background: #0068ff; }
+  .fab-phone { background: #e2231a; }
+
+  .ring {
+    position: absolute;
+    inset: 0;
+    border-radius: 50%;
+    border: 2px solid currentColor;
+    animation: ring-pulse 1.8s ease-out infinite;
+    pointer-events: none;
+  }
+  .fab-zalo .ring { color: #0068ff; }
+  .fab-phone .ring { color: #e2231a; }
+
+  .floating-cta {
+    position: fixed;
+    right: 20px;
+    bottom: 24px;
+    z-index: 60;
+    background: #e2231a;
+    color: white;
+    font-weight: 600;
+    padding: 14px 22px;
+    border-radius: 999px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.25);
+    animation: breathe 1.4s ease-in-out infinite;
+  }
+
+  @keyframes breathe {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.08); }
+  }
+
+  @keyframes ring-pulse {
+    0% { transform: scale(1); opacity: 0.7; }
+    100% { transform: scale(1.8); opacity: 0; }
+  }
+
+  @media (max-width: 640px) {
+    .floating-cta { padding: 12px 18px; font-size: 0.9rem; }
+    .fab { width: 46px; height: 46px; }
+  }
+</style>

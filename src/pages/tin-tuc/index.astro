@@ -1,0 +1,133 @@
+---
+import Layout from "../../layouts/Layout.astro";
+import Header from "../../components/Header.astro";
+import Footer from "../../components/Footer.astro";
+
+// Tự động lấy tất cả bài viết .md trong thư mục này, mới nhất lên đầu
+const posts = Object.values(import.meta.glob("./*.md", { eager: true }))
+  .map((p) => ({ ...p.frontmatter, url: p.url }))
+  .sort((a, b) => new Date(b.date) - new Date(a.date));
+
+const fmt = (date) => {
+  const d = new Date(date);
+  return `${String(d.getDate()).padStart(2, "0")}/${String(d.getMonth() + 1).padStart(2, "0")}/${d.getFullYear()}`;
+};
+const [first, ...rest] = posts;
+---
+<Layout
+  title="Tin tức New Green Villa Hội An – Cập nhật dự án, bảng giá, pháp lý"
+  description="Tin tức mới nhất về dự án New Green Villa Hội An (Hội An Green Village): tiến độ hạ tầng, bảng giá đất nền, pháp lý, kinh nghiệm mua đất nền Hội An."
+  path="/tin-tuc"
+>
+  <Header />
+  <main id="top" class="news-page">
+    <div class="container">
+      <nav class="breadcrumb" aria-label="Breadcrumb"><a href="/">Trang chủ</a> <span>›</span> Tin tức</nav>
+      <div class="section-heading">
+        <h1>TIN TỨC NEW GREEN VILLA HỘI AN</h1>
+        <span class="heading-line"></span>
+      </div>
+
+      {first && (
+        <a href={first.url} class="featured">
+          <img src={first.image} alt={first.imageAlt || first.title} />
+          <div class="featured-body">
+            <span class="tag">Tin mới nhất</span>
+            <h2>{first.title}</h2>
+            <p>{first.description}</p>
+            <time datetime={first.date}>{fmt(first.date)}</time>
+          </div>
+        </a>
+      )}
+
+      <div class="news-grid">
+        {rest.map((p) => (
+          <a href={p.url} class="card">
+            <img src={p.image} alt={p.imageAlt || p.title} loading="lazy" />
+            <div class="card-body">
+              <time datetime={p.date}>{fmt(p.date)}</time>
+              <h2>{p.title}</h2>
+              <p>{p.description}</p>
+              <span class="more">Đọc tiếp →</span>
+            </div>
+          </a>
+        ))}
+      </div>
+    </div>
+  </main>
+  <Footer />
+</Layout>
+
+<style>
+  .news-page { padding: 28px 0 48px; background: var(--color-mist); }
+  .breadcrumb { font-size: 0.85rem; color: #5c6b66; margin-bottom: 10px; }
+  .breadcrumb a { color: var(--color-brass); }
+  .breadcrumb span { margin: 0 6px; }
+  .section-heading { text-align: center; margin-bottom: 26px; }
+  .section-heading h1 {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    letter-spacing: 0.04em;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  .heading-line { display: block; width: 40px; height: 2px; background: var(--color-clay); margin: 14px auto 0; }
+
+  .featured {
+    display: grid;
+    grid-template-columns: 1.2fr 1fr;
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 28px;
+    box-shadow: 0 4px 18px rgba(18,46,43,0.08);
+  }
+  .featured img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 16 / 10; }
+  .featured-body { padding: 28px; display: flex; flex-direction: column; justify-content: center; }
+  .tag {
+    align-self: flex-start;
+    background: var(--color-brass);
+    color: #fff;
+    font-size: 0.75rem;
+    font-weight: 700;
+    padding: 4px 10px;
+    border-radius: 999px;
+    margin-bottom: 12px;
+    letter-spacing: 0.04em;
+  }
+  .featured h2 { font-family: var(--font-body); font-size: 1.45rem; font-weight: 700; line-height: 1.35; margin-bottom: 12px; }
+  .featured p { color: #3d4d49; line-height: 1.65; margin-bottom: 14px; }
+  .featured time, .card time { font-size: 0.82rem; color: #7a8783; }
+
+  .news-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 24px; }
+  .card {
+    background: #fff;
+    border-radius: 8px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    box-shadow: 0 4px 18px rgba(18,46,43,0.06);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .card:hover, .featured:hover { transform: translateY(-3px); box-shadow: 0 10px 26px rgba(18,46,43,0.12); }
+  .card img { width: 100%; aspect-ratio: 16 / 10; object-fit: cover; }
+  .card-body { padding: 18px; display: flex; flex-direction: column; flex: 1; }
+  .card h2 { font-family: var(--font-body); font-size: 1.05rem; font-weight: 700; line-height: 1.4; margin: 6px 0 8px; }
+  .card p {
+    color: #5c6b66;
+    font-size: 0.92rem;
+    line-height: 1.6;
+    display: -webkit-box;
+    -webkit-line-clamp: 3;
+    -webkit-box-orient: vertical;
+    overflow: hidden;
+    margin-bottom: 12px;
+  }
+  .more { margin-top: auto; color: var(--color-brass); font-weight: 600; font-size: 0.9rem; }
+
+  @media (max-width: 860px) {
+    .featured { grid-template-columns: 1fr; }
+    .featured-body { padding: 20px; }
+    .news-grid { grid-template-columns: 1fr; }
+  }
+</style>

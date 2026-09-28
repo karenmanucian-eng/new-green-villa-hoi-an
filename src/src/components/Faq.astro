@@ -1,0 +1,117 @@
+---
+import { PHONE } from "../config";
+
+const faqs = [
+  {
+    q: "New Green Villa Hội An và Hội An Green Village có phải cùng một dự án?",
+    a: "Đúng vậy. Cả hai là tên thương mại của Khu dân cư và dịch vụ Cầu Hưng – Lai Nghi, do Công ty CP Đầu tư Nông nghiệp Sài Gòn Thành Đạt làm chủ đầu tư. Người dân địa phương thường gọi là khu phố chợ Lai Nghi.",
+  },
+  {
+    q: "Dự án thuộc phường nào sau khi sáp nhập?",
+    a: "Từ ngày 1/7/2025, phường Điện Nam Đông được nhập vào phường Điện Bàn Đông, thuộc TP. Đà Nẵng. Vị trí thực tế không thay đổi: vẫn quanh chợ Lai Nghi, cạnh sông Lai Nghi, phía Bắc phố cổ Hội An khoảng 3 km.",
+  },
+  {
+    q: "Đất nền New Green Villa Hội An đã có sổ đỏ chưa?",
+    a: "Các lô thuộc giai đoạn 1 đã được cấp sổ đỏ riêng từng lô. Với lô ở các giai đoạn khác, chúng tôi cung cấp đầy đủ hồ sơ pháp lý hiện có để quý khách xem trước khi quyết định.",
+  },
+  {
+    q: "Diện tích lô đất bao nhiêu, có những loại nào?",
+    a: "Diện tích phổ biến từ 100 – 300 m², gồm lô nhà phố, shophouse mặt đường 10,5 – 15 m, lô biệt thự và khu nhà ven hồ Home Lake.",
+  },
+  {
+    q: "Có hỗ trợ vay ngân hàng không?",
+    a: "Có. Chúng tôi kết nối ngân hàng hỗ trợ vay đến 70% giá trị lô đất. Hạn mức và lãi suất cụ thể do ngân hàng thẩm định theo hồ sơ từng khách hàng.",
+  },
+  {
+    q: "Làm sao để đi xem đất thực tế?",
+    a: `Quý khách gọi hotline ${PHONE} hoặc điền form đăng ký. Chuyên viên sẽ hẹn lịch, đón tại Hội An hoặc Đà Nẵng và dẫn đi xem từng lô còn trống.`,
+  },
+];
+
+const faqLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+---
+<section id="hoi-dap" class="faq">
+  <div class="container">
+    <div class="section-heading">
+      <h2>HỎI ĐÁP</h2>
+      <span class="heading-line"></span>
+    </div>
+
+    <div class="faq-list">
+      {faqs.map((f) => (
+        <details>
+          <summary>{f.q}</summary>
+          <p>{f.a}</p>
+        </details>
+      ))}
+    </div>
+  </div>
+  <script type="application/ld+json" set:html={JSON.stringify(faqLd)} />
+</section>
+
+<style>
+  .faq { background: var(--color-mist); padding-top: 8px; padding-bottom: 32px; }
+  .section-heading {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .section-heading h2 {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    letter-spacing: 0.04em;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  .heading-line {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--color-clay);
+    margin: 14px auto 0;
+  }
+  .faq-list {
+    max-width: 860px;
+    margin: 0 auto;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+  }
+  details {
+    background: white;
+    border: 1px solid rgba(18,46,43,0.1);
+    border-radius: 6px;
+    padding: 16px 20px;
+  }
+  summary {
+    cursor: pointer;
+    font-weight: 600;
+    color: var(--color-ink);
+    list-style: none;
+    position: relative;
+    padding-right: 28px;
+  }
+  summary::-webkit-details-marker { display: none; }
+  summary::after {
+    content: "+";
+    position: absolute;
+    right: 0;
+    top: -3px;
+    font-size: 1.4rem;
+    color: var(--color-brass);
+  }
+  details[open] summary::after { content: "–"; }
+  details p {
+    margin-top: 10px;
+    color: #3d4d49;
+    line-height: 1.7;
+    text-align: justify;
+  }
+</style>

@@ -1,0 +1,40 @@
+:root {
+  --color-ink: #122e2b;   /* xanh rêu đậm - màu chủ đạo */
+  --color-mist: #eef2ed;  /* nền sáng, tông sương biển */
+  --color-sand: #e4dcc8;  /* nền phụ, tông cát ấm */
+  --color-brass: #b08a3e; /* điểm nhấn vàng đồng */
+  --color-clay: #a85d3c;  /* điểm nhấn đất nung, dùng ít */
+  --font-display: "Fraunces", serif;
+  --font-body: "Be Vietnam Pro", sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; }
+
+body {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  background: var(--color-mist);
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-family: var(--font-display);
+  font-weight: 500;
+  line-height: 1.15;
+}
+
+img { max-width: 100%; display: block; }
+a { color: inherit; text-decoration: none; }
+
+.container {
+  max-width: 1180px;
+  margin-inline: auto;
+  padding-inline: 24px;
+}
+
+section { padding-block: 96px; }
+
+@media (max-width: 720px) {
+  section { padding-block: 56px; }
+  .container { padding-inline: 20px; }
+}

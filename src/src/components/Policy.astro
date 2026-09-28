@@ -1,0 +1,278 @@
+---
+import { FORM_ACTION, ENTRY_NAME, ENTRY_PHONE, ENTRY_NOTE } from "../config";
+---
+<section id="chinh-sach" class="policy">
+  <div class="container">
+    <div class="section-heading">
+      <h2>CHÍNH SÁCH BÁN HÀNG NEW GREEN VILLA HỘI AN</h2>
+      <span class="heading-line"></span>
+    </div>
+
+    <p class="policy-intro">
+      Với đất nền, điều người mua cân nhắc đầu tiên luôn là pháp lý và dòng tiền. Vì vậy chính sách tại
+      <strong>New Green Villa Hội An</strong> tập trung vào hai điểm này. Các lô giai đoạn 1 đã có sổ đỏ riêng,
+      công chứng sang tên được ngay. Đi kèm là gói hỗ trợ vay ngân hàng, giúp khách hàng chủ động sở hữu
+      một lô đất cạnh phố cổ Hội An mà không phải dồn toàn bộ vốn cùng lúc.
+    </p>
+
+    <div class="policy-banner">
+      <img src="/images/chinh-sach-ban-hang-new-green-villa-hoi-an.webp" alt="Chính sách bán hàng đất nền New Green Villa Hội An" loading="lazy" />
+    </div>
+
+    <div class="policy-split">
+      <div class="policy-left">
+        <p class="policy-lead">
+          Mua đất tại <strong>New Green Villa Hội An</strong>, khách hàng được hỗ trợ trọn quy trình: từ xem đất
+          thực tế, kiểm tra hồ sơ pháp lý đến ký hợp đồng và sang tên.
+        </p>
+        <div class="policy-group">
+          <h4>Pháp lý minh bạch</h4>
+          <ul class="policy-list">
+            <li>Sổ đỏ riêng từng lô đối với sản phẩm giai đoạn 1</li>
+            <li>Cung cấp bản sao sổ và vị trí lô trên bản đồ trước khi đặt cọc</li>
+            <li>Hỗ trợ thủ tục công chứng, sang tên</li>
+          </ul>
+        </div>
+
+        <div class="policy-group">
+          <h4>Hỗ trợ tài chính</h4>
+          <ul class="policy-list">
+            <li>Kết nối ngân hàng cho vay đến 70% giá trị lô đất</li>
+            <li>Luôn có lô giá tốt, lô ngoại giao theo từng thời điểm</li>
+          </ul>
+        </div>
+
+        <div class="policy-group">
+          <h4>Dịch vụ khách hàng</h4>
+          <ul class="policy-list">
+            <li>Đưa đón xem đất thực tế miễn phí từ Hội An, Đà Nẵng</li>
+            <li>Gửi sơ đồ lô trống và bảng giá cập nhật qua Zalo</li>
+          </ul>
+        </div>
+      </div>
+
+      <div class="policy-form">
+        <h3>Tải xuống bảng giá và chính sách</h3>
+        <p>Quý khách vui lòng điền thông tin dưới đây. Hệ thống sẽ gửi bảng giá, sơ đồ lô trống vào Zalo trong ít phút.</p>
+        <form
+          id="policy-form"
+          action={FORM_ACTION}
+          method="POST"
+          target="hidden-google-form"
+        >
+          <input type="text" name={ENTRY_NAME} placeholder="Họ và tên..." required />
+          <input type="tel" name={ENTRY_PHONE} placeholder="Số điện thoại/Zalo..." required />
+          <input type="text" name={ENTRY_NOTE} placeholder="Ghi chú thêm (nếu có)..." />
+          <button type="submit">Tải ngay</button>
+        </form>
+
+        <div class="success-screen" id="policy-success">
+          <svg class="success-check" viewBox="0 0 52 52">
+            <circle cx="26" cy="26" r="25" fill="none" />
+            <path fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+          </svg>
+          <p class="success-title">Đăng ký thành công!</p>
+          <p class="success-sub">Chúng tôi sẽ liên hệ bạn sớm nhất.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.policy { background: var(--color-mist); padding-top: 16px; padding-bottom: 16px; }
+  .section-heading {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .section-heading h2 {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    letter-spacing: 0.04em;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  .heading-line {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--color-clay);
+    margin: 14px auto 0;
+  }
+
+  .policy-intro {
+    max-width: 100%;
+    margin: 0 auto 20px;
+    text-align: justify;
+    color: #3d4d49;
+    line-height: 1.75;
+  }
+
+  .policy-banner {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .policy-banner img {
+    width: 100%;
+    display: block;
+  }
+
+.policy-split {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: 48px;
+  align-items: stretch;
+}
+
+.policy-lead {
+  color: #3d4d49;
+  line-height: 1.6;
+  margin-bottom: 18px;
+  text-align: justify;
+}
+.policy-group { margin-bottom: 14px; }
+.policy-group:last-child { margin-bottom: 0; }
+.policy-group h4 {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--color-ink);
+  margin-bottom: 8px;
+}
+  .policy-list li {
+    list-style: none;
+    padding-left: 22px;
+    position: relative;
+    margin-bottom: 6px;
+    color: #3d4d49;
+    font-size: 0.98rem;
+  }
+  .policy-list li::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    color: var(--color-brass);
+    font-size: 0.85rem;
+  }
+
+.policy-form {
+  background: var(--color-ink);
+  color: white;
+  border-radius: 8px;
+  padding: 36px;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+  .policy-form h3 {
+    font-family: var(--font-body);
+    font-size: 1.2rem;
+    margin-bottom: 14px;
+  }
+  .policy-form p {
+    font-size: 0.9rem;
+    color: rgba(255,255,255,0.85);
+    margin-bottom: 22px;
+    line-height: 1.6;
+  }
+.policy-form form {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  flex: 1;
+}
+.policy-form button { margin-top: auto; }
+  .policy-form input {
+    padding: 12px 14px;
+    border-radius: 4px;
+    border: none;
+    font-family: var(--font-body);
+    font-size: 0.9rem;
+  }
+.policy-form button {
+  margin-top: auto;
+  background: #c0392b;
+  color: white;
+  border: none;
+  padding: 13px;
+  border-radius: 4px;
+  font-weight: 700;
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  font-family: var(--font-body);
+  transition: background 0.2s ease;
+}
+.policy-form button:hover {
+  background: #a5301f;
+}
+
+@media (max-width: 860px) {
+  .policy-split { grid-template-columns: 1fr; gap: 20px; }
+  .policy-intro { margin-bottom: 20px; }
+  .policy-banner { margin-bottom: 20px;}
+    .policy-lead {
+    text-align: justify;
+  }
+}
+
+  .success-screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex: 1;
+  }
+  .success-screen.is-visible { display: flex; }
+
+  .success-check {
+    width: 64px;
+    height: 64px;
+    margin-bottom: 14px;
+  }
+  .success-check circle {
+    stroke: var(--color-brass);
+    stroke-width: 2;
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    animation: draw-circle 0.5s ease forwards;
+  }
+  .success-check path {
+    stroke: var(--color-brass);
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: draw-check 0.35s ease forwards 0.45s;
+  }
+  @keyframes draw-circle { to { stroke-dashoffset: 0; } }
+  @keyframes draw-check { to { stroke-dashoffset: 0; } }
+
+  .success-title {
+    color: white;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin-bottom: 6px;
+  }
+  .success-sub {
+    color: rgba(255,255,255,0.85);
+    font-size: 0.9rem;
+  }
+</style>
+<script>
+  const form = document.getElementById("policy-form");
+  const success = document.getElementById("policy-success");
+
+  form?.addEventListener("submit", () => {
+    if (typeof gtag_report_conversion === "function") {
+      gtag_report_conversion();
+    }
+    setTimeout(() => {
+      form.style.display = "none";
+      success?.classList.add("is-visible");
+    }, 700);
+  });
+</script>

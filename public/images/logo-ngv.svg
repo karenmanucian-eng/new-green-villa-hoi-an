@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 260 64" width="260" height="64">
+<g transform="translate(4,6)"><path d="M26 2C14 13 8 24 8 33a18 18 0 0 0 36 0C44 24 38 13 26 2z" fill="#b08a3e"/><path d="M26 18v32M26 30l-8-6M26 38l8-6" stroke="#122e2b" stroke-width="2.6" stroke-linecap="round" fill="none"/></g>
+<text x="62" y="33" font-family="Georgia, 'Times New Roman', serif" font-size="25" font-weight="600" fill="#eef2ed" letter-spacing="0.5">New Green Villa</text>
+<text x="63" y="53" font-family="Arial, sans-serif" font-size="12" font-weight="700" fill="#b08a3e" letter-spacing="5">HỘI AN</text>
+</svg>

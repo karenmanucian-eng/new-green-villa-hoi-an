@@ -1,0 +1,117 @@
+---
+const amenityImages = [
+  { src: "/images/cho-lai-nghi-new-green-villa-hoi-an.webp", alt: "Chợ Lai Nghi trong dự án New Green Villa Hội An" },
+  { src: "/images/cong-vien-new-green-villa-hoi-an.webp", alt: "Công viên cây xanh Hội An Green Village" },
+  { src: "/images/home-lake-new-green-villa-hoi-an.webp", alt: "Hồ cảnh quan Home Lake – New Green Villa Hội An" },
+  { src: "/images/trung-tam-thuong-mai-new-green-villa-hoi-an.webp", alt: "Trung tâm thương mại, siêu thị – New Green Villa Hội An" },
+];
+---
+<section id="tien-ich" class="amenities">
+  <div class="container">
+    <div class="section-heading">
+      <h2>TIỆN ÍCH NEW GREEN VILLA HỘI AN</h2>
+      <span class="heading-line"></span>
+    </div>
+
+    <p class="amenities-intro">
+      <strong>New Green Villa Hội An</strong> được thiết kế như một khu phố chợ đúng nghĩa. Chợ Lai Nghi là trung tâm
+      sinh hoạt, xung quanh là trung tâm thương mại, siêu thị cao cấp, trung tâm y tế và chăm sóc sức khỏe. Hạ tầng
+      cho gia đình có trẻ nhỏ cũng đầy đủ: trường mầm non, nhà văn hóa, sân chơi trẻ em. Mọi nhu cầu thường ngày
+      đều giải quyết được trong vài phút đi bộ.
+    </p>
+
+    <div class="amenities-banner">
+      <img src="/images/tien-ich-new-green-villa-hoi-an.webp" alt="Tiện ích nội khu New Green Villa Hội An" loading="lazy" />
+    </div>
+
+    <p class="amenities-lead">
+      Điểm khác biệt của <strong>New Green Villa Hội An</strong> là mảng xanh: ba công viên phân bổ đều trong khu,
+      hồ cảnh quan Home Lake và dòng sông Lai Nghi ở phía Nam. Hệ thống điện, nước, chiếu sáng và xử lý nước thải
+      được đầu tư đồng bộ. Các tiện ích nổi bật bao gồm:
+    </p>
+
+    <div class="layout-grid">
+      {amenityImages.map((img) => (
+        <div class="layout-item">
+          <img src={img.src} alt={img.alt} loading="lazy" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.amenities { background: var(--color-mist); padding-top: 0px; padding-bottom: 8px; }
+  .section-heading {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .section-heading h2 {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    letter-spacing: 0.04em;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  .heading-line {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--color-clay);
+    margin: 14px auto 0;
+  }
+
+  .amenities-intro {
+    max-width: 100%;
+    margin: 0 auto 20px;
+    text-align: justify;
+    color: #3d4d49;
+    line-height: 1.75;
+  }
+
+  .amenities-banner {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .amenities-banner img {
+    width: 100%;
+    display: block;
+  }
+
+  .amenities-lead {
+    max-width: 100%;
+    margin: 0 auto 20px;
+    text-align: justify;
+    color: #3d4d49;
+    line-height: 1.75;
+  }
+
+  .layout-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .layout-item {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .layout-item img {
+    width: 100%;
+    display: block;
+  }
+
+  @media (max-width: 860px) {
+    .amenities { padding-top: 8px; }
+    .amenities-intro {
+      margin-bottom: 16px;
+      text-align: justify;
+    }
+    .amenities-banner { margin-bottom: 16px; }
+    .amenities-lead {
+      margin-bottom: 20px;
+      text-align: justify;
+    }
+    .layout-grid { grid-template-columns: 1fr; }
+  }
+</style>

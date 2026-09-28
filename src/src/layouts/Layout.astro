@@ -1,0 +1,82 @@
+---
+import "../styles/global.css";
+import FloatingContact from "../components/FloatingContact.astro";
+import PopupForm from "../components/PopupForm.astro";
+import { SITE_URL, PHONE_INTL } from "../config";
+
+const {
+  title = "New Green Villa Hội An (Hội An Green Village) – Đất Nền Phố Chợ Lai Nghi",
+  description = "Đất nền New Green Villa Hội An – khu dân cư Cầu Hưng – Lai Nghi 109 ha, cách phố cổ Hội An 3 km. Lô nhà phố, shophouse, biệt thự 100–300 m², giai đoạn 1 có sổ đỏ. Nhận bảng giá mới nhất.",
+  path = "/",
+} = Astro.props;
+
+const pageUrl = `${SITE_URL}${path}`;
+const ogImage = `${SITE_URL}/images/phoi-canh-new-green-villa-hoi-an-1.webp`;
+---
+<!doctype html>
+<html lang="vi">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{title}</title>
+    <meta name="description" content={description} />
+    <meta name="keywords" content="New Green Villa Hội An, Hội An Green Village, đất nền Hội An, đất nền chợ Lai Nghi, khu dân cư Cầu Hưng Lai Nghi, đất nền Điện Bàn, biệt thự Hội An, shophouse Hội An, Sài Gòn Thành Đạt" />
+    <link rel="canonical" href={pageUrl} />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:site_name" content="New Green Villa Hội An" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:image" content={ogImage} />
+    <meta property="og:url" content={pageUrl} />
+    <meta property="og:locale" content="vi_VN" />
+
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content={title} />
+    <meta name="twitter:description" content={description} />
+    <meta name="twitter:image" content={ogImage} />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Be+Vietnam+Pro:wght@400;500;600;700;800&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Statcounter: tạo project mới cho New Green Villa trên statcounter.com rồi dán mã vào đây -->
+
+    <script type="application/ld+json" set:html={JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "Residence",
+      "name": "New Green Villa Hội An (Hội An Green Village)",
+      "alternateName": ["Hội An Green Village", "Khu dân cư và dịch vụ Cầu Hưng – Lai Nghi", "Phố chợ Lai Nghi"],
+      "description": description,
+      "url": SITE_URL,
+      "image": ogImage,
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Khu vực chợ Lai Nghi",
+        "addressLocality": "Phường Điện Bàn Đông",
+        "addressRegion": "Đà Nẵng",
+        "addressCountry": "VN"
+      },
+      "telephone": PHONE_INTL
+    })} />
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=AW-18429285665"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'AW-18429285665');
+    </script>
+  </head>
+<body>
+  <slot />
+  <FloatingContact />
+  <PopupForm />
+  <iframe name="hidden-google-form" style="display:none;"></iframe>
+</body>
+</html>

@@ -1,0 +1,118 @@
+<section id="tien-ich" class="amenities">
+  <div class="container">
+    <div class="section-heading">
+      <h2>TIỆN ÍCH NEW GREEN VILLA HỘI AN</h2>
+      <span class="heading-line"></span>
+    </div>
+
+    <p class="amenities-intro">
+      <strong>New Green Villa Hội An</strong> được thiết kế như một khu phố chợ đúng nghĩa: chợ Lai Nghi nằm ngay trong
+      lòng dự án, xung quanh là hệ thống công viên, khu công cộng, công trình dịch vụ cấp đô thị và trường học. Mọi nhu cầu
+      thường ngày của cư dân đều được đáp ứng chỉ trong vài phút đi bộ, trong khi phía Nam là cảnh quan sông Thu Bồn
+      và trục đường Hùng Vương ven sông.
+    </p>
+
+    <div class="amenities-banner">
+      <img src="/images/tien-ich-new-green-villa-hoi-an.webp" alt="Mặt bằng tiện ích New Green Villa Hội An – chợ Lai Nghi, công viên, trường nghề, sông Thu Bồn" loading="lazy" />
+    </div>
+
+    <p class="amenities-lead">
+      Hệ thống tiện ích nội khu <strong>New Green Villa Hội An</strong> theo mặt bằng quy hoạch bao gồm:
+    </p>
+
+    <ul class="amenity-list">
+      <li><strong>Công viên – cây xanh:</strong> nhiều công viên rải đều khắp khu, cùng quảng trường trung tâm và dải cây xanh ven kênh.</li>
+      <li><strong>Chợ Lai Nghi:</strong> trung tâm giao thương và sinh hoạt hằng ngày của cả khu phố chợ.</li>
+      <li><strong>Khu công cộng:</strong> không gian sinh hoạt cộng đồng, thể thao, vui chơi cho trẻ em.</li>
+      <li><strong>Công trình dịch vụ cấp đô thị:</strong> thương mại, dịch vụ, y tế phục vụ cư dân và khu vực lân cận.</li>
+      <li><strong>Trường nghề Quảng Nam:</strong> nằm liền kề trục ĐT607, mang lại nguồn khách thuê ổn định.</li>
+      <li><strong>Cảnh quan sông Thu Bồn:</strong> đường Hùng Vương ven sông, bến thuyền và công viên bờ sông phía Nam dự án.</li>
+    </ul>
+
+    <div class="amenity-grid">
+      <img src="/images/cho-lai-nghi-new-green-villa-hoi-an.webp" alt="Chợ Lai Nghi – tiện ích mua sắm tại New Green Villa Hội An" loading="lazy" />
+      <img src="/images/cong-vien-new-green-villa-hoi-an.webp" alt="Công viên cây xanh New Green Villa Hội An" loading="lazy" />
+      <img src="/images/truong-hoc-new-green-villa-hoi-an.webp" alt="Trường học ngay trong khu đô thị New Green Villa Hội An" loading="lazy" />
+      <img src="/images/khu-the-thao-new-green-villa-hoi-an.webp" alt="Khu thể thao New Green Villa Hội An" loading="lazy" />
+    </div>
+  </div>
+</section>
+
+<style>
+.amenities { background: var(--color-mist); padding-top: 0px; padding-bottom: 0px; }
+  .section-heading {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .section-heading h2 {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    letter-spacing: 0.04em;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  .heading-line {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--color-clay);
+    margin: 14px auto 0;
+  }
+
+  .amenities-intro,
+  .amenities-lead {
+    max-width: 100%;
+    margin: 0 auto 20px;
+    text-align: justify;
+    color: #3d4d49;
+    line-height: 1.75;
+  }
+
+  .amenities-banner {
+    border-radius: 8px;
+    overflow: hidden;
+    margin-bottom: 20px;
+  }
+  .amenities-banner img {
+    width: 100%;
+    display: block;
+  }
+
+  .amenity-list { list-style: none; margin: 0 0 24px; padding: 0; }
+  .amenity-list li {
+    position: relative;
+    padding-left: 22px;
+    margin-bottom: 10px;
+    color: #3d4d49;
+    line-height: 1.65;
+    text-align: justify;
+  }
+  .amenity-list li::before {
+    content: "★";
+    position: absolute;
+    left: 0;
+    top: 1px;
+    color: var(--color-brass);
+    font-size: 0.85rem;
+  }
+  .amenity-list strong { color: var(--color-ink); }
+
+  .amenity-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+    margin-bottom: 24px;
+  }
+  .amenity-grid img {
+    width: 100%;
+    display: block;
+    border-radius: 8px;
+  }
+
+  @media (max-width: 860px) {
+    .amenities { padding-top: 8px; }
+    .amenities-intro { margin-bottom: 16px; }
+    .amenities-banner { margin-bottom: 16px; }
+    .amenity-grid { grid-template-columns: 1fr; gap: 14px; }
+  }
+</style>

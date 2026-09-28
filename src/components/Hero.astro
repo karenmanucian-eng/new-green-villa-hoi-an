@@ -1,0 +1,86 @@
+<section id="top" class="hero">
+  <h1 class="visually-hidden">New Green Villa Hội An (Hội An Green Village) – Đất nền phố chợ Lai Nghi, khu dân cư Cầu Hưng – Lai Nghi</h1>
+  <div class="hero-banner" id="hero-slider">
+    <img src="/images/phoi-canh-new-green-villa-hoi-an-1.webp" alt="Phối cảnh khu đô thị New Green Villa Hội An bên sông Lai Nghi" class="is-active" fetchpriority="high" />
+    <img src="/images/phoi-canh-new-green-villa-hoi-an-2.webp" alt="Hội An Green Village – khu phố chợ Lai Nghi, Hội An" />
+  </div>
+</section>
+
+<style>
+.hero { padding-top: 0; padding-bottom: 0; }
+.hero-banner {
+  position: relative;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  overflow: hidden;
+}
+  .hero-banner img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 15%;
+  opacity: 0;
+  transition: opacity 1.2s ease;
+}
+  .hero-banner img.is-active { opacity: 1; }
+
+  .hero-content { padding-top: 56px; }
+
+  h1 {
+    font-size: clamp(2.1rem, 4vw, 3.4rem);
+    color: var(--color-ink);
+  }
+  .hero-sub {
+    margin-top: 20px;
+    max-width: 60ch;
+    color: #3d4d49;
+  }
+  .hero-facts {
+    display: flex;
+    gap: 32px;
+    margin-top: 36px;
+  }
+  .hero-facts div { display: flex; flex-direction: column; }
+  .hero-facts strong {
+    font-family: var(--font-display);
+    font-size: 1.6rem;
+    color: var(--color-clay);
+  }
+  .hero-facts span { font-size: 0.85rem; color: #5c6b66; }
+  .hero-cta {
+    display: inline-block;
+    margin-top: 40px;
+    background: var(--color-ink);
+    color: var(--color-mist);
+    padding: 14px 28px;
+    border-radius: 4px;
+    font-weight: 600;
+  }
+  .visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+</style>
+
+<script>
+  const slider = document.getElementById("hero-slider");
+  const images = slider?.querySelectorAll("img");
+  let current = 0;
+
+  if (images && images.length > 1) {
+    setInterval(() => {
+      images[current].classList.remove("is-active");
+      current = (current + 1) % images.length;
+      images[current].classList.add("is-active");
+    }, 5000);
+  }
+</script>

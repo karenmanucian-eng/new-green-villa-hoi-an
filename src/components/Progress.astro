@@ -1,0 +1,97 @@
+---
+const progressImages = [
+  { src: "/images/ha-tang-thuc-te-new-green-villa-hoi-an-1.webp", alt: "Hình ảnh thực tế New Green Villa Hội An tháng 9/2026 – toàn cảnh dự án nhìn ra biển" },
+  { src: "/images/ha-tang-thuc-te-new-green-villa-hoi-an-2.webp", alt: "Đường nội khu và vòng xoay trung tâm New Green Villa Hội An" },
+  { src: "/images/ha-tang-thuc-te-new-green-villa-hoi-an-3.webp", alt: "Hạ tầng hoàn thiện New Green Villa Hội An nhìn về Cù Lao Chàm" },
+  { src: "/images/ha-tang-thuc-te-new-green-villa-hoi-an-4.webp", alt: "Các lô đất nền đã phân lô tại New Green Villa Hội An" },
+  { src: "/images/ha-tang-thuc-te-new-green-villa-hoi-an-5.webp", alt: "Đường nhựa, vỉa hè, cây xanh thực tế tại New Green Villa Hội An" },
+  { src: "/images/ha-tang-thuc-te-new-green-villa-hoi-an-6.webp", alt: "Toàn cảnh hạ tầng New Green Villa Hội An tháng 9/2026" },
+];
+---
+<section id="ha-tang" class="progress">
+  <div class="container">
+    <div class="section-heading">
+      <h2>HÌNH ẢNH THỰC TẾ DỰ ÁN</h2>
+      <span class="heading-line"></span>
+    </div>
+
+    <p class="progress-intro">
+      <strong>New Green Villa Hội An</strong> sở hữu hệ thống hạ tầng đã hoàn thiện 100%, đồng bộ và chỉn chu. Hệ thống đường nội khu
+      được đầu tư hoàn chỉnh, vỉa hè thông thoáng; hệ thống điện, cấp – thoát nước và các hạng mục hạ tầng kỹ thuật thiết yếu
+      được bố trí đầy đủ, đáp ứng nhu cầu sử dụng và sinh hoạt lâu dài.
+    </p>
+    <p class="progress-intro">
+      Các tuyến đường và từng khu đất đã được hình thành rõ ràng trên thực tế, giúp khách hàng dễ dàng trực tiếp tham quan,
+      kiểm tra vị trí và hiện trạng hạ tầng trước khi lựa chọn sản phẩm.
+    </p>
+    <p class="progress-intro">
+      Hình ảnh thực tế cập nhật tháng 09/2026, phản ánh trực quan hiện trạng và mức độ hoàn thiện hạ tầng tại dự án
+      New Green Villa Hội An.
+    </p>
+
+    <div class="progress-grid">
+      {progressImages.map((img) => (
+        <div class="progress-item">
+          <img src={img.src} alt={img.alt} loading="lazy" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.progress { background: var(--color-mist); padding-top: 0px; padding-bottom: 16px !important; }
+  .section-heading {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .section-heading h2 {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    letter-spacing: 0.04em;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  .heading-line {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--color-clay);
+    margin: 14px auto 0;
+  }
+
+  .progress-intro {
+    max-width: 100%;
+    margin: 0 auto 8px;
+    text-align: justify;
+    color: #3d4d49;
+    line-height: 1.6;
+  }
+  .progress-intro:last-of-type {
+    margin-bottom: 16px;
+  }
+
+  .progress-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .progress-item {
+    border-radius: 8px;
+    overflow: hidden;
+    aspect-ratio: 16 / 9;
+  }
+  .progress-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center bottom;
+    display: block;
+  }
+
+  @media (max-width: 860px) {
+    .progress { padding-top: 8px; padding-bottom: 8px; }
+    .progress-intro:last-of-type { margin-bottom: 16px; }
+    .progress-grid { grid-template-columns: 1fr; gap: 14px; }
+  }
+</style>

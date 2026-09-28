@@ -1,0 +1,108 @@
+<section id="tong-quan" class="overview">
+  <div class="container">
+    <div class="section-heading">
+      <h2>TỔNG QUAN NEW GREEN VILLA HỘI AN</h2>
+      <span class="heading-line"></span>
+    </div>
+
+    <div class="overview-grid">
+      <dl class="overview-specs">
+        <div><dt>Tên thương mại</dt><dd>New Green Villa Hội An (Hội An Green Village)</dd></div>
+        <div><dt>Tên pháp lý</dt><dd>Khu dân cư và dịch vụ Cầu Hưng – Lai Nghi</dd></div>
+        <div><dt>Vị trí</dt><dd>Khu vực chợ Lai Nghi, P. Điện Bàn Đông (trước là P. Điện Nam Đông, TX. Điện Bàn), TP. Đà Nẵng</dd></div>
+        <div><dt>Chủ đầu tư</dt><dd>Công ty CP Đầu tư Nông nghiệp Sài Gòn Thành Đạt</dd></div>
+        <div><dt>Tổng quy mô</dt><dd>109 ha, phát triển theo 3 giai đoạn</dd></div>
+        <div><dt>Tổng vốn đầu tư</dt><dd>Khoảng 1.600 tỷ đồng</dd></div>
+        <div><dt>Loại hình</dt><dd>Đất nền nhà phố – shophouse, biệt thự – nghỉ dưỡng</dd></div>
+        <div><dt>Số lô giai đoạn 1</dt><dd>198 lô nhà phố – shophouse, 109 lô biệt thự</dd></div>
+        <div><dt>Diện tích lô</dt><dd>Phổ biến 100 – 300 m²</dd></div>
+        <div><dt>Đường nội khu</dt><dd>7,5 m – 10,5 m – 15 m</dd></div>
+        <div><dt>Pháp lý</dt><dd>Giai đoạn 1 đã có sổ đỏ từng lô</dd></div>
+      </dl>
+      <div class="overview-card">
+        <img src="/images/tong-quan-new-green-villa-hoi-an.webp" alt="Tổng quan dự án New Green Villa Hội An – khu dân cư Cầu Hưng Lai Nghi" loading="lazy" />
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+.overview {
+  padding-top: 16px;
+  padding-bottom: 16px;
+  background:
+    radial-gradient(circle at 15% 20%, rgba(255,255,255,0.5), transparent 40%),
+    radial-gradient(circle at 85% 70%, rgba(255,255,255,0.4), transparent 45%),
+    var(--color-sand);
+}
+  .section-heading {
+    text-align: center;
+    margin-bottom: 18px;
+  }
+.section-heading h2 {
+  font-family: var(--font-body);
+  color: var(--color-ink);
+  letter-spacing: 0.04em;
+  font-size: 1.6rem;
+  font-weight: 700;
+}
+  .heading-line {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--color-clay);
+    margin: 14px auto 0;
+  }
+  .overview-grid {
+    display: grid;
+    grid-template-columns: 1.1fr 0.9fr;
+    gap: 56px;
+    align-items: stretch;
+  }
+.overview-specs div {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    padding-block: 6px;
+    border-bottom: 1px solid rgba(18,46,43,0.12);
+  }
+  .overview-specs dt {
+    color: #5c6b66;
+    font-size: 0.92rem;
+    flex-shrink: 0;
+  }
+  .overview-specs dd {
+    font-weight: 600;
+    text-align: right;
+  }
+.overview-card {
+    position: relative;
+    border-radius: 6px;
+    overflow: hidden;
+    min-height: 100%;
+  }
+  .overview-card img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+    display: block;
+  }
+@media (max-width: 860px) {
+  .overview { padding-top: 16px; }
+  .section-heading { margin-bottom: 12px; }
+  .overview-grid { grid-template-columns: 1fr; gap: 32px; }
+  .overview-specs div {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 2px;
+    padding-block: 8px;
+  }
+  .overview-specs dt { font-size: 0.8rem; }
+  .overview-specs dd { text-align: left; line-height: 1.35; }
+  .overview-card { min-height: 0; }
+  .overview-card img { position: static; height: auto; }
+}
+</style>

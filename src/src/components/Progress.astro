@@ -1,0 +1,90 @@
+---
+const progressImages = [
+  { src: "/images/ha-tang-thuc-te-new-green-villa-hoi-an-1.webp", alt: "Hạ tầng thực tế New Green Villa Hội An – toàn cảnh" },
+  { src: "/images/ha-tang-thuc-te-new-green-villa-hoi-an-2.webp", alt: "Đường nội khu 15 m tại New Green Villa Hội An" },
+  { src: "/images/ha-tang-thuc-te-new-green-villa-hoi-an-3.webp", alt: "Khu phố chợ Lai Nghi – hạ tầng thực tế" },
+  { src: "/images/ha-tang-thuc-te-new-green-villa-hoi-an-4.webp", alt: "Công viên, cây xanh thực tế tại Hội An Green Village" },
+];
+---
+<section id="ha-tang" class="progress">
+  <div class="container">
+    <div class="section-heading">
+      <h2>HẠ TẦNG THỰC TẾ</h2>
+      <span class="heading-line"></span>
+    </div>
+
+    <p class="progress-intro">
+      Khác với nhiều dự án đất nền mới chỉ có trên bản vẽ, hạ tầng kỹ thuật tại <strong>New Green Villa Hội An</strong>
+      đã hình thành trên thực tế. Đường nhựa, vỉa hè, điện chiếu sáng, cấp thoát nước và cây xanh đã có sẵn. Chợ Lai Nghi
+      cùng các dãy phố quanh chợ đã đi vào sinh hoạt, người mua có thể đến tận nơi kiểm chứng.
+    </p>
+    <p class="progress-intro">
+      Hạ tầng hoàn chỉnh cho phép khách hàng nhận đất và khởi công xây dựng ngay sau khi hoàn tất thủ tục sang tên.
+    </p>
+
+    <div class="progress-grid">
+      {progressImages.map((img) => (
+        <div class="progress-item">
+          <img src={img.src} alt={img.alt} loading="lazy" />
+        </div>
+      ))}
+    </div>
+  </div>
+</section>
+
+<style>
+.progress { background: var(--color-mist); padding-top: 8px; padding-bottom: 16px !important; }
+  .section-heading {
+    text-align: center;
+    margin-bottom: 16px;
+  }
+  .section-heading h2 {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    letter-spacing: 0.04em;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  .heading-line {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--color-clay);
+    margin: 14px auto 0;
+  }
+
+.progress-intro {
+    max-width: 100%;
+    margin: 0 auto 8px;
+    text-align: justify;
+    color: #3d4d49;
+    line-height: 1.5;
+  }
+  .progress-intro:last-of-type {
+    margin-bottom: 16px;
+  }
+
+  .progress-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 24px;
+  }
+  .progress-item {
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .progress-item img {
+    width: 100%;
+    display: block;
+  }
+
+  @media (max-width: 860px) {
+    .progress { padding-top: 8px; padding-bottom: 8px; }
+    .progress-intro {
+      margin-bottom: 12px;
+      text-align: justify;
+    }
+    .progress-intro:last-of-type { margin-bottom: 16px; }
+    .progress-grid { grid-template-columns: 1fr; gap: 14px; }
+  }
+</style>

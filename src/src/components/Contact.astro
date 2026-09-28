@@ -1,0 +1,204 @@
+---
+import { PHONE, COMPANY, COMPANY_ADDRESS, FORM_ACTION, ENTRY_NAME, ENTRY_PHONE } from "../config";
+---
+<section id="lien-he" class="contact">
+  <div class="container">
+    <div class="section-heading">
+      <h2>LIÊN HỆ</h2>
+      <span class="heading-line"></span>
+    </div>
+
+    <div class="contact-grid">
+      <div>
+        <img src="/images/logo-new-green-villa-hoi-an-dark.webp" alt="New Green Villa Hội An" class="contact-logo" />
+        <p class="contact-department">{COMPANY}</p>
+        <p class="contact-text">
+          Đơn vị phân phối dự án New Green Villa Hội An (Hội An Green Village).
+        </p>
+        <div class="contact-info">
+          <div><span>Địa chỉ</span><strong>{COMPANY_ADDRESS}</strong></div>
+          <div><span>Hotline</span><strong>{PHONE}</strong></div>
+        </div>
+      </div>
+
+      <form
+        class="contact-form"
+        id="contact-form"
+        action={FORM_ACTION}
+        method="POST"
+        target="hidden-google-form"
+      >
+        <label>
+          Họ và tên
+          <input type="text" name={ENTRY_NAME} placeholder="Nguyễn Văn A" required />
+        </label>
+        <label>
+          Số điện thoại
+          <input type="tel" name={ENTRY_PHONE} placeholder="09xxxxxxxx" required />
+        </label>
+        <button type="submit">Nhận bảng giá & chính sách</button>
+        <p class="form-note">
+          Thông tin của bạn được bảo mật, chỉ dùng để liên hệ tư vấn.
+        </p>
+      </form>
+
+      <div class="success-screen" id="contact-success">
+        <svg class="success-check" viewBox="0 0 52 52">
+          <circle cx="26" cy="26" r="25" fill="none" />
+          <path fill="none" d="M14.1 27.2l7.1 7.2 16.7-16.8" />
+        </svg>
+        <p class="success-title">Đăng ký thành công!</p>
+        <p class="success-sub">Chúng tôi sẽ liên hệ bạn sớm nhất.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<style>
+  .contact { background: var(--color-sand); padding-top: 8px; padding-bottom: 32px; }
+
+  .section-heading {
+    text-align: center;
+    margin-bottom: 32px;
+  }
+  .section-heading h2 {
+    font-family: var(--font-body);
+    color: var(--color-ink);
+    letter-spacing: 0.04em;
+    font-size: 1.6rem;
+    font-weight: 700;
+  }
+  .heading-line {
+    display: block;
+    width: 40px;
+    height: 2px;
+    background: var(--color-clay);
+    margin: 14px auto 0;
+  }
+
+  .contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 56px;
+  }
+.contact-logo {
+  display: block;
+  height: 96px;
+  width: auto;
+  max-width: 100%;
+  object-fit: contain;
+  margin: 0 auto 24px;
+}
+.contact-department {
+  font-weight: 700;
+  color: var(--color-ink);
+  font-size: 1.25rem;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+  margin-bottom: 12px;
+}
+  .contact-text { max-width: 40ch; color: #3d4d49; margin-bottom: 32px; }
+  .contact-info div { margin-bottom: 18px; }
+  .contact-info span { display: block; font-size: 0.85rem; color: #5c6b66; }
+  .contact-info strong { font-size: 1.1rem; }
+
+  .contact-form {
+    background: white;
+    border-radius: 8px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+    gap: 18px;
+  }
+  .contact-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-size: 0.9rem;
+    color: #3d4d49;
+  }
+  .contact-form input {
+    padding: 12px 14px;
+    border: 1px solid rgba(18,46,43,0.2);
+    border-radius: 4px;
+    font-size: 0.95rem;
+    font-family: var(--font-body);
+  }
+  .contact-form button {
+    background: #c0392b;
+    color: white;
+    padding: 14px;
+    border: none;
+    border-radius: 4px;
+    font-weight: 700;
+    font-size: 0.98rem;
+    cursor: pointer;
+    font-family: var(--font-body);
+    transition: background 0.2s ease;
+  }
+  .contact-form button:hover { background: #a5301f; }
+  .form-note { font-size: 0.8rem; color: #7a715a; }
+
+  @media (max-width: 860px) {
+    .contact { padding-top: 8px; padding-bottom: 20px; }
+    .contact-grid { grid-template-columns: 1fr; gap: 28px; }
+  }
+
+  .success-screen {
+    display: none;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 20px 0 8px;
+  }
+  .success-screen.is-visible { display: flex; }
+
+  .success-check {
+    width: 72px;
+    height: 72px;
+    margin-bottom: 16px;
+  }
+  .success-check circle {
+    stroke: #1e7e34;
+    stroke-width: 2;
+    stroke-dasharray: 166;
+    stroke-dashoffset: 166;
+    animation: draw-circle 0.5s ease forwards;
+  }
+  .success-check path {
+    stroke: #1e7e34;
+    stroke-width: 3;
+    stroke-linecap: round;
+    stroke-linejoin: round;
+    stroke-dasharray: 48;
+    stroke-dashoffset: 48;
+    animation: draw-check 0.35s ease forwards 0.45s;
+  }
+  @keyframes draw-circle { to { stroke-dashoffset: 0; } }
+  @keyframes draw-check { to { stroke-dashoffset: 0; } }
+
+  .success-title {
+    color: var(--color-ink);
+    font-weight: 700;
+    font-size: 1.15rem;
+    margin-bottom: 6px;
+  }
+  .success-sub {
+    color: #5c6b66;
+    font-size: 0.92rem;
+  }
+</style>
+<script>
+  const form = document.getElementById("contact-form");
+  const success = document.getElementById("contact-success");
+
+  form?.addEventListener("submit", () => {
+    if (typeof gtag_report_conversion === "function") {
+      gtag_report_conversion();
+    }
+    setTimeout(() => {
+      form.style.display = "none";
+      success?.classList.add("is-visible");
+    }, 700);
+  });
+</script>

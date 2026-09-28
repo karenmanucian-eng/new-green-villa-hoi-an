@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://new-green-villa-hoi-an.vercel.app/sitemap.xml
